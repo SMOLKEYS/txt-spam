@@ -22,11 +22,11 @@ const text = [
   "wtheyn2rg3yh3yj4unt4ik3yjb2yb2tb2th2tv",
 ];
 
-let num;
+let num = 0;
 
 const spam = () => text[Mathf.floor(Mathf.random() * text.length)];
 
 Events.on(ClientLoadEvent, e => {
-  num = num + 1;
   Timer.schedule(()=>Core.settings.getDataDirectory().child("crashes").child("hell" + num + ".txt").writeString(spam()), 1, 1);
+  Timer.schedule(()=>num = num + 1, 1, 1);
 });
