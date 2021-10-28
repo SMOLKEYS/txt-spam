@@ -22,7 +22,7 @@ const text = [
   "wtheyn2rg3yh3yj4unt4ik3yjb2yb2tb2th2tv",
 ];
 
-let num = 1;
+let num;
 
 const spam = () => text[Mathf.floor(Mathf.random() * text.length)];
 
