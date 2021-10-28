@@ -25,4 +25,6 @@ const text = [
 
 const spam = () => text[Mathf.floor(Mathf.random() * text.length)];
 
-Timer.schedule(()=>Core.settings.getDataDirectory().child("crashes").child("hell.txt").writeString(spam()), 0.2, 0.2);
+Events.on(ClientLoadEvent, e => {
+  Timer.schedule(()=>Core.settings.getDataDirectory().child("crashes").child("hell.txt").writeString(spam()), 0.2, 0.2);
+});
